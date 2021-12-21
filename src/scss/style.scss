@@ -1,0 +1,322 @@
+$main: rgb(145 151 223);
+@import "./nullstyle.scss";
+@import "../../node_modules/swiper/swiper.scss";
+* {
+    font-family: "Roboto", sans-serif;
+}
+body {
+    background-color: $main;
+    color: #1f2041ba;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 50px 25px;
+    position: relative;
+    max-width: 1200px;
+    min-height: 200px;
+}
+.backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #0000006e;
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    &.active {
+        display: block;
+    }
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: $main;
+    border-radius: 4px;
+    border: 1px solid $main;
+    height: 44px;
+    padding: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    &:hover {
+        transition: all 0.2s ease-in;
+        background-color: $main;
+        color: #fff;
+    }
+}
+.__absolute {
+    position: absolute;
+}
+.buttons {
+    display: flex;
+}
+
+.__btn-active {
+    transition: all 0.2s ease-in;
+    background-color: $main;
+    color: #fff;
+}
+.btn-create {
+    border: 1px solid #9197df80;
+    justify-content: center;
+    width: 222px;
+    height: 267px;
+    border-radius: 15px;
+    transition: all 0.2s ease-in;
+    .material-icons-outlined {
+        transition: all 0.2s ease-in;
+        font-size: 50px;
+        color: #9197df38;
+    }
+    &:hover {
+        transition: all 0.2s ease-in;
+        background-color: #9197df38;
+        .material-icons-outlined {
+            transition: all 0.2s ease-in;
+            color: #fff;
+        }
+    }
+}
+
+form {
+    opacity: 0;
+    overflow-y: hidden;
+    visibility: hidden;
+    position: fixed;
+    top: 10vh;
+    left: 30vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 30px 30px;
+    width: 400px;
+    transition: visibility 0.2s;
+    z-index: 10000;
+
+    &.open {
+        transition: opacity 0.2s, visibility 0.2s;
+        opacity: 1;
+        overflow-y: visible;
+        visibility: visible;
+    }
+    .buttons{
+        margin-top: 20px;
+        justify-content: flex-end;
+        .btn{
+            width: 73px;
+        }
+        .btn+.btn{
+            margin-left: 15px;
+        }
+    }
+}
+
+input {
+    height: 44px;
+    border: 1px solid rgba(12, 13, 25, 0.25);
+    border-radius: 4px;
+    padding-left: 15px;
+    color: rgba(31, 32, 65, 0.75);
+    font-size: 16px;
+    line-height: 24px;
+    transition: all 0.2s;
+    &::placeholder {
+        font-size: 16px;
+        line-height: 24px;
+        color: rgba(12, 13, 25, 0.25);
+    }
+
+    &:hover,
+    &:focus {
+        transition: all 0.2s;
+        border-color: rgba(31, 32, 65, 0.5);
+        outline: none;
+    }
+    &.error {
+        border: 1px solid #ff0000c4;
+
+        & + .error-text {
+            opacity: 1;
+            overflow-y: visible;
+            visibility: visible;
+        }
+    }
+}
+
+.error-text {
+    font-size: 14px;
+    opacity: 0;
+    height: 100%;
+    overflow-y: hidden;
+    visibility: hidden;
+    color: #ff0000bf;
+    padding: 1px;
+}
+.recommend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+.card-book {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #9197df80;
+    border-radius: 15px;
+    width: 220px;
+    min-height: 267px;
+    padding: 10px;
+    overflow: hidden;
+    cursor: pointer;
+
+    .card-book__text {
+        color: rgba(31, 32, 65, 0.75);
+        max-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-top: 15px;
+
+        * + * {
+            padding-top: 5px;
+        }
+    }
+
+    .card-book__title {
+        font-weight: 700;
+        color: #1f2041ba;
+    }
+    .card-book__year,
+    .card-book__raiting,
+    .card-book__ISBN{
+        color: rgba(31, 32, 65, 0.4);
+        text-align: left;
+    }
+    img {
+        opacity: 0.6;
+        width: 130px;
+        height: 120px;
+    }
+
+    .card-book__hover {
+        opacity: 0;
+        overflow-y: hidden;
+        visibility: hidden;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 0;
+        backdrop-filter: blur(2px);
+        background-color: #9197df80;
+        .buttons {
+            flex-direction: column;
+            width: 100%;
+            .btn{
+                border-left: none;
+                border-right: none;
+                border-radius: 0;
+            }
+            .btn + .btn {
+                margin-top: 10px;
+            }
+        }
+    }
+    &:hover .card-book__hover {
+        transition: opacity 0.2s, height 0.2s;
+        opacity: 1;
+        height: 50%;
+        overflow-y: visible;
+        visibility: visible;
+    }
+}
+
+.group {
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    & > *{
+        margin: 20px;
+    }
+}
+
+.select {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+    .select-dropDown {
+        position: absolute;
+        top: 42px;
+        width: 266px;
+        border: 1px solid $main;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        overflow-y: hidden;
+        height: 0;
+        z-index: 2;
+        transition: opacity 0.2s, height 0.2s, visibility 0.2s;
+    }
+    .select-dropDown__item {
+        font-size: 16px;
+        padding: 5px;
+        cursor: pointer;
+        &:hover {
+            background-color: $main;
+            color: #fff;
+        }
+        
+    }.value{
+            white-space: nowrap;
+        }
+    .btn {
+        width: 266px;
+        justify-content: space-around;
+    }
+
+    &.open {
+        .select-dropDown {
+            opacity: 1;
+            visibility: visible;
+            overflow-y: visible;
+            height: 81px;
+            transition: opacity 0.2s, height 0.2s, visibility 0.2s;
+        }
+    }
+}
