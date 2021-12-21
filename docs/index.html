@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Book catalog</title>
+<script defer src="./js/vendors-node_modules_firebase_app_dist_index_esm_js-node_modules_firebase_compat_auth_dist_in-0e0423.js"></script><script defer src="./js/index.js"></script><link href="./css/index.css" rel="stylesheet"></head>
+
+<body><div class="backdrop"></div>
+    <div class="container">
+        <div class="catalog">
+            <h1>Book catalog</h1>
+            <div class="recommend">
+                <h3>Recommendation</h3>
+                <div class="recommend__content">
+                    <div class="card-book">
+                        <img src="./img/open-book.svg">
+                        <div class="card-book__text">
+                            <div class="card-book__title"></div>
+                            <div class="card-book__author"></div>
+                            <div class="card-book__year"></div>
+                            <div class="card-book__raiting"></div>
+                            <div class="card-book__ISBN"></div>
+                        </div>
+                        <div class="card-book__hover">
+                            <div class="buttons">
+                                <button class="btn" data-type="delete">delete</button>
+                                <button class="btn" data-type="redactor">edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="select">
+                <button type="button" class="btn" data-type='select-input'>
+                    <span class="value" data-type='select-input'>group by date</span>
+                    <span class="material-icons" data-type='select-input'>expand_more</span>
+                </button>
+                <div class="select-dropDown">
+                    <div class="select-dropDown__item" data-type='select-item' data-value='Publication year'>date
+                    </div>
+                    <div class="select-dropDown__item" data-type='select-item' data-value='Rating'>rating</div>
+                    <div class="select-dropDown__item" data-type='select-item' data-value='Author'>author</div>
+                </div>
+            </div>
+            <div class="group">
+                <button type="button" class="btn btn-create" data-type='openModal'>
+                <span class="material-icons-outlined">add</span></button>
+                <div class="card-book">
+                    <img src="./img/open-book.svg">
+                    <div class="card-book__text">
+                        <div class="card-book__title"></div>
+                        <div class="card-book__author"></div>
+                        <div class="card-book__year"></div>
+                        <div class="card-book__raiting"></div>
+                        <div class="card-book__ISBN"></div>
+                    </div>
+                    <div class="card-book__hover">
+                        <div class="buttons">
+                            <button class="btn" data-type="delete">delete</button>
+                            <button class="btn" data-type="redactor">edit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-book">
+                    <img src="./img/open-book.svg">
+                    <div class="card-book__text">
+                        <div class="card-book__title"></div>
+                        <div class="card-book__author"></div>
+                        <div class="card-book__year"></div>
+                        <div class="card-book__raiting"></div>
+                        <div class="card-book__ISBN"></div>
+                    </div>
+                    <div class="card-book__hover">
+                        <div class="buttons">
+                            <button class="btn" data-type="delete">delete</button>
+                            <button class="btn" data-type="redactor">edit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-book">
+                    <img src="./img/open-book.svg">
+                    <div class="card-book__text">
+                        <div class="card-book__title"></div>
+                        <div class="card-book__author"></div>
+                        <div class="card-book__year"></div>
+                        <div class="card-book__raiting"></div>
+                        <div class="card-book__ISBN"></div>
+                    </div>
+                    <div class="card-book__hover">
+                        <div class="buttons">
+                            <button class="btn" data-type="delete">delete</button>
+                            <button class="btn" data-type="redactor">edit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-book">
+                    <img src="./img/open-book.svg">
+                    <div class="card-book__text">
+                        <div class="card-book__title"></div>
+                        <div class="card-book__author"></div>
+                        <div class="card-book__year"></div>
+                        <div class="card-book__raiting"></div>
+                        <div class="card-book__ISBN"></div>
+                    </div>
+                    <div class="card-book__hover">
+                        <div class="buttons">
+                            <button class="btn" data-type="delete">delete</button>
+                            <button class="btn" data-type="redactor">edit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-book">
+                    <img src="./img/open-book.svg">
+                    <div class="card-book__text">
+                        <div class="card-book__title"></div>
+                        <div class="card-book__author"></div>
+                        <div class="card-book__year"></div>
+                        <div class="card-book__raiting"></div>
+                        <div class="card-book__ISBN"></div>
+                    </div>
+                    <div class="card-book__hover">
+                        <div class="buttons">
+                            <button class="btn" data-type="delete">delete</button>
+                            <button class="btn" data-type="redactor">edit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-book">
+                    <img src="./img/open-book.svg">
+                    <div class="card-book__text">
+                        <div class="card-book__title"></div>
+                        <div class="card-book__author"></div>
+                        <div class="card-book__year"></div>
+                        <div class="card-book__raiting"></div>
+                        <div class="card-book__ISBN"></div>
+                    </div>
+                    <div class="card-book__hover">
+                        <div class="buttons">
+                            <button class="btn" data-type="delete">delete</button>
+                            <button class="btn" data-type="redactor">edit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-book">
+                    <img src="./img/open-book.svg">
+                    <div class="card-book__text">
+                        <div class="card-book__title"></div>
+                        <div class="card-book__author"></div>
+                        <div class="card-book__year"></div>
+                        <div class="card-book__raiting"></div>
+                        <div class="card-book__ISBN"></div>
+                    </div>
+                    <div class="card-book__hover">
+                        <div class="buttons">
+                            <button class="btn" data-type="delete">delete</button>
+                            <button class="btn" data-type="redactor">edit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-book">
+                    <img src="./img/open-book.svg">
+                    <div class="card-book__text">
+                        <div class="card-book__title"></div>
+                        <div class="card-book__author"></div>
+                        <div class="card-book__year"></div>
+                        <div class="card-book__raiting"></div>
+                        <div class="card-book__ISBN"></div>
+                    </div>
+                    <div class="card-book__hover">
+                        <div class="buttons">
+                            <button class="btn" data-type="delete">delete</button>
+                            <button class="btn" data-type="redactor">edit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-book">
+                    <img src="./img/open-book.svg">
+                    <div class="card-book__text">
+                        <div class="card-book__title"></div>
+                        <div class="card-book__author"></div>
+                        <div class="card-book__year"></div>
+                        <div class="card-book__raiting"></div>
+                        <div class="card-book__ISBN"></div>
+                    </div>
+                    <div class="card-book__hover">
+                        <div class="buttons">
+                            <button class="btn" data-type="delete">delete</button>
+                            <button class="btn" data-type="redactor">edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+        <form data-type="createForm">
+            <h3>Fill input</h3>
+            <input type="text" name="Name" placeholder="Name of the book">
+            <div class="error-text">Required field</div>
+            <input type="text" name="Author" placeholder="List of authors">
+            <div class="error-text">Required field</div>
+            <input type="number" name="Publication year" placeholder="Publication year">
+            <div class="error-text">The year should be from 1800 to the current year</div>
+            <input type="number" name="Rating" placeholder="Rating from 0 to 10">
+            <div class="error-text">Integer value from 0 to 10</div>
+            <input type="text" name="ISBN" placeholder="ISBN">
+            <div class="buttons">
+                <button type="reset" class="btn" data-type='cancel'>cancel</button>
+                <button type="submit" class="btn __btn-active" data-type='create'>add</button>
+            </div>
+        </form>
+        <form data-type="redactorForm">
+            <h3>Edit form</h3>
+            <input type="text" name="Name" placeholder="Name of the book">
+            <div class="error-text">Required field</div>
+            <input type="text" name="Author" placeholder="List of authors">
+            <div class="error-text">Required field</div>
+            <input type="number" name="Publication year" placeholder="Publication year">
+            <div class="error-text">The year should be from 1800 to the current year</div>
+            <input type="number" name="Rating" placeholder="Rating from 0 to 10">
+            <div class="error-text">Integer value from 0 to 10</div>
+            <input type="text" name="ISBN" placeholder="ISBN">
+            <div class="buttons">
+                <button type="reset" class="btn" data-type='cancel'>cancel</button>
+                <button type="submit" class="btn __btn-active" data-type='save'>save</button>
+            </div>
+        </form>
+    </div>
+    </div>
+
+</body>
+
+</html>
